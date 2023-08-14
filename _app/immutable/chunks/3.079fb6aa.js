@@ -1,1 +1,0 @@
-import{S as o,i,s as r,q as c,r as l,b as g,H as a,h as m}from"./index.4879c9f0.js";function p(n){let t;return{c(){t=c("Login Page")},l(e){t=l(e,"Login Page")},m(e,s){g(e,t,s)},p:a,i:a,o:a,d(e){e&&m(t)}}}class u extends o{constructor(t){super(),i(this,t,null,p,r,{})}}const x=u;export{x as component};
