@@ -7,54 +7,33 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<link rel="manifest" href="/site.webmanifest" />
 		<meta name="viewport" content="width=device-width" />
-		<script>
-			const { fetch: originalFetch } = window;
-			window.fetch = async (...args) => {
-				const [resource, config] = args;
-
-				const response = await originalFetch(resource, config);
-
-				// response interceptor
-				response.json = () =>
-					response
-						.clone()
-						.json()
-						.then((data) => {
-							const mData = { ...data, title: `Intercepted: ${data.title}` };
-							console.log('##### Intercept response', mData);
-							return mData;
-						});
-				console.log('##### Intercept response', response);
-				return response;
-			};
-		</script>
 		
 		<link href="./app/immutable/assets/0.005c583a.css" rel="stylesheet">
 		<link href="./app/immutable/assets/2.521de0ed.css" rel="stylesheet">
-		<link rel="modulepreload" href="./app/immutable/entry/start.cfd43f17.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/scheduler.05098771.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/singletons.05178a8c.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/index.e2459265.js">
-		<link rel="modulepreload" href="./app/immutable/entry/app.09f61fea.js">
+		<link rel="modulepreload" href="./app/immutable/entry/start.7023da7e.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/scheduler.d39a3720.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/singletons.eb72a055.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/index.42ef28c5.js">
+		<link rel="modulepreload" href="./app/immutable/entry/app.3055b492.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/preload-helper.a4192956.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/index.1afa7b11.js">
-		<link rel="modulepreload" href="./app/immutable/nodes/0.6a491b8e.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/Toaster.839db4d5.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/CloseButton.9ae9b063.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/index.07c9debd.js">
+		<link rel="modulepreload" href="./app/immutable/nodes/0.f2830a5c.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/Toaster.c44c04bd.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/CloseButton.b9a97b75.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/tw-merge.222c61b5.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/Frame.b6a7dc09.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/toaster.state.ef64405c.js">
-		<link rel="modulepreload" href="./app/immutable/nodes/2.a359d74c.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/Drawer.1ef5438c.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/rbac.state.f62b17b6.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/Frame.04c90228.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/toaster.state.428f9499.js">
+		<link rel="modulepreload" href="./app/immutable/nodes/2.ab084b62.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/Drawer.8e5fbcd1.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/rbac.state.c59680ed.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/client.3f1dd265.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/stores.f84adf26.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/Button.f7615c55.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/auth.state.8ea2929f.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/navigation.1aac69a2.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/Avatar.bdb085d9.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/Wrapper.6a40e875.js">
-		<link rel="modulepreload" href="./app/immutable/nodes/5.8ee2f7c6.js"><!-- HEAD_svelte-1pa505f_START --><script data-svelte-h="svelte-mp99qu">if ('color-theme' in localStorage) {
+		<link rel="modulepreload" href="./app/immutable/chunks/stores.cd9b89a4.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/Button.b98179ef.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/auth.state.206bbbe8.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/navigation.94e6626a.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/Avatar.8401bb05.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/Wrapper.6d32c054.js">
+		<link rel="modulepreload" href="./app/immutable/nodes/5.955b8f6d.js"><!-- HEAD_svelte-1pa505f_START --><script data-svelte-h="svelte-mp99qu">if ('color-theme' in localStorage) {
       // explicit preference - overrides author's choice
       localStorage.getItem('color-theme') === 'dark' ? window.document.documentElement.classList.add('dark') : window.document.documentElement.classList.remove('dark');
     } else {
@@ -71,7 +50,7 @@
 			
 			<script>
 				{
-					__sveltekit_19uhtpy = {
+					__sveltekit_e3pmov = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -81,8 +60,8 @@
 					const data = [null,null,null];
 
 					Promise.all([
-						import("./app/immutable/entry/start.cfd43f17.js"),
-						import("./app/immutable/entry/app.09f61fea.js")
+						import("./app/immutable/entry/start.7023da7e.js"),
+						import("./app/immutable/entry/app.3055b492.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2, 5],
